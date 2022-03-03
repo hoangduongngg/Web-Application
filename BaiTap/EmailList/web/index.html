@@ -1,8 +1,7 @@
 <!DOCTYPE html> 
 <html> 
     <head>
-                            <meta charset="utf-8">
-
+        <meta charset="utf-8">
         <title>Murach's Java Servlets and JSP</title> 
         <link rel="stylesheet" href="styles/main.css" type="text/css"/> </head> 
     <body> 
@@ -17,17 +16,28 @@
             <input type="text" name="firstName" required><br> 
             <label>Last Name:</label> 
             <input type="text" name="lastName" required><br> 
-            <p>I’m interested in these types of music:
-                <input type="radio" name="gender" value="Male">Male
-                <input type="radio" name="gender" value="Femnale">Female 
-                <input type="radio" name="gender" value="Other">Other
-            Education level:<br>
-            <select name="education" multiple>
-                <option value="Dai hoc" selected>Dai hoc</option>
-                <option value="Cao dang">Cao dang</option>
-                <option value="Trung cap">Trung cap</option>
+
+        <div>
+            <label>Gender: </label>
+            <select name="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
             </select>
-            <label>&nbsp;</label>
-            <input type="submit" value="Join Now" id="submit">  </form> 
+            <br>
+        </div>
+        
+        <div>
+            <label>Education:</label>
+            <select name="education">
+                <option value="University">University</option>
+                <option value="College">College</option>
+                <option value="Intermediate">Intermediate</option>
+            </select>
+        </div>  
+        <br>
+        
+        <label>&nbsp;</label>
+        <input type="submit" value="Join Now" id="submit">  </form> 
     </body> 
 </html>
