@@ -15,7 +15,7 @@
         <span>${user.lastName}</span><br>
         <label>Gender:</label> 
         <span>${user.gender}</span><br>
-        <label>Educational level:</label> 
+        <label>Educational:</label> 
         <span>${user.edu}</span><br>
         <p>To enter another email address, click on the Back   button in your browser or the Return button shown   below.</p> 
         <form action="" method="get"> 
