@@ -4,7 +4,6 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import murach.business.User;
-import murach.business.Message;
 //import murach.data.UserDB;
 
 public class EmailListServlet extends HttpServlet {
@@ -35,7 +34,6 @@ public class EmailListServlet extends HttpServlet {
         // validate the parameters
         String message_fn = "", message_ln ="", message_email="";
         
-        Message message = new Message(message_fn, message_ln, message_email);
         url = "/display_email_list.jsp";
         if (firstName.trim().equals("")) {
             message_fn = "Please fill out text box.";
