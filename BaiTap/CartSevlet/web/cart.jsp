@@ -51,8 +51,7 @@
     <form action="<c:url value='/index.jsp' />" method="post">
      <input type="submit" value="Continue Shopping">
     </form>
-    <form action="<c:url value='/checkout.jsp' />" 
-            method="post">
+    <form action="<c:url value='/checkout.jsp' />" method="post">
         <input type="submit" value="Checkout">
     </form>
 </body>
