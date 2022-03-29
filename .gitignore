@@ -17,3 +17,6 @@
 /BaiTap/SQLGatewayServlet/build/
 /test/TestConnectJDBC/nbproject/private/
 /test/TestConnectJDBC/build/
+/test/LoginSession_Test/nbproject/private/
+/test/LoginSession_Test/build/
+/test/Login_Test/nbproject/private/
