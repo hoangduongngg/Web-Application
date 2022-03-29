@@ -15,3 +15,5 @@
 /BaiTap/EmailList_Session/build/
 /BaiTap/SQLGatewayServlet/nbproject/private/
 /BaiTap/SQLGatewayServlet/build/
+/test/TestConnectJDBC/nbproject/private/
+/test/TestConnectJDBC/build/
