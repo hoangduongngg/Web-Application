@@ -24,3 +24,6 @@
 /test/Test_ConnectJDBC_SQLServer/nbproject/private/
 /test/Test_LoginSession/nbproject/private/
 /test/Test_ConnectJDBC_MySQL/nbproject/private/
+/test/Test_ConnectJDBC_MySQL/build/
+/test/Test_RunJavaApp/nbproject/private/
+/test/Test_RunJavaApp/build/
