@@ -4,11 +4,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author hoangduongngg
  */
+@WebServlet(urlPatterns = {"/JDBC_Connection"})
 public class JDBC_Connection {
     public static Connection getJDBCConnection()  {
         

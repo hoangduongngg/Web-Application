@@ -27,3 +27,6 @@
 /test/Test_ConnectJDBC_MySQL/build/
 /test/Test_RunJavaApp/nbproject/private/
 /test/Test_RunJavaApp/build/
+/test/Test_Login/build/
+/test/Test_JDBC_MySQL/nbproject/private/
+/test/Test_JDBC_MySQL/build/
