@@ -21,3 +21,5 @@
 /test/LoginSession_Test/build/
 /test/Login_Test/nbproject/private/
 /test/TestConnectJDBC_SQLServer/nbproject/private/
+/test/Test_ConnectJDBC_SQLServer/nbproject/private/
+/test/Test_LoginSession/nbproject/private/
