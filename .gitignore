@@ -30,3 +30,6 @@
 /test/Test_Login/build/
 /test/Test_JDBC_MySQL/nbproject/private/
 /test/Test_JDBC_MySQL/build/
+/test/Test_LoginSession/build/
+/test/Test_Email_Cookies/nbproject/private/
+/test/Test_Email_Cookies/build/
