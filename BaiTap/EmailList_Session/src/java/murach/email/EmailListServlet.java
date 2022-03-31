@@ -42,17 +42,14 @@ public class EmailListServlet extends HttpServlet {
             HttpSession session = request.getSession();
             User user = (User) session.getAttribute("user");
             
+            String checkEmail = "Not Logged";
             if (user == null || email.equals(user.getEmail())) {
                 user = new User(firstName, lastName, email, gender, edu);
                 session.setAttribute("user", user);
-                String checkEmail = user.getEmail();
-                session.setAttribute("checkEmail", checkEmail);
+                checkEmail = user.getEmail();
             }
-            else {
-                String checkEmail = "Not Logged";
-                session.setAttribute("checkEmail", checkEmail);
-            }
-            
+            session.setAttribute("checkEmail", checkEmail);
+           
             url = "/thanks.jsp"; // the "thanks" page  
         }
 
