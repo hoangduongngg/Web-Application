@@ -12,21 +12,6 @@ import java.sql.SQLException;
  * @author hoangduongngg
  */
 public class JDBC_Connection {
-//    public static void main(String[] args) throws SQLException {
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//            String url = "jdbc:mysql://localhost:3306/hello";
-//            String user = "root";
-//            String password = "nguyenhoangduong212121";
-//            Connection connection = (Connection) DriverManager.getConnection(url, user, password);
-//            System.out.println("Done");
-//        } 
-//        catch(ClassNotFoundException e) {
-//            System.out.println("Fail");
-//            e.printStackTrace();
-//        }
-//    }
-//}
 
     public static void main(String[] args) throws ClassNotFoundException {
         Connection connection = getJDBCConnection();
