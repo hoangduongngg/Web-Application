@@ -49,7 +49,6 @@ public class EmailListServlet extends HttpServlet {
                 checkEmail = user.getEmail();
             }
             session.setAttribute("checkEmail", checkEmail);
-           
             url = "/thanks.jsp"; // the "thanks" page  
         }
 

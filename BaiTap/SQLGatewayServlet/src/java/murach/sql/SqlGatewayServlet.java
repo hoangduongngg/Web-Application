@@ -5,7 +5,9 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import java.sql.*;
+import javax.servlet.annotation.WebServlet;
 
+@WebServlet(urlPatterns = {"/sqlGateway"})
 public class SqlGatewayServlet extends HttpServlet {
 
     @Override
@@ -20,8 +22,8 @@ public class SqlGatewayServlet extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
 // get a connection
             String dbURL = "jdbc:mysql://localhost:3306/murach";
-            String username = "murach_user";
-            String password = "sesame";
+            String username = "root";
+            String password = "123456789";
             Connection connection = DriverManager.getConnection(
                     dbURL, username, password);
 

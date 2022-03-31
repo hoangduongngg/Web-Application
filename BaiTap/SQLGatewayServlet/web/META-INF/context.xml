@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--<Context path="/SQLGatewayServlet"/>-->
-<Context path="/ch12email">
+<Context path="/SQLGatewayServlet">
+
 
     <Resource name="jdbc/murach" auth="Container" 
         driverClassName="com.mysql.jdbc.Driver" 
