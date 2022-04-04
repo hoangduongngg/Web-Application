@@ -15,10 +15,14 @@
         <form action="login" method="post">
             <div>
                 <input type="text" name="username" placeholder="username"> <br>
-                <input type="text" name="password" placeholder="password"> <br>
-                <input type="button" id="login" value="Log In">
-                <input type="button" id="register" value="Register">
+                <input type="password" name="password" placeholder="password"> <br>
+                <input type="submit" id="login" value="Log In">
+                
             </div>
+            
+            <!--<input action="register" type="submit" id="register" value="Register">-->
+            <a href="register.jsp">Register</a>
+            
         </form>
     </body>
 </html>
