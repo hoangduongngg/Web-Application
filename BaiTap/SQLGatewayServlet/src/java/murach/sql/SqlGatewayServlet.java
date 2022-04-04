@@ -5,9 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 
 import java.sql.*;
-import javax.servlet.annotation.WebServlet;
 
-@WebServlet(urlPatterns = {"/sqlGateway"})
 public class SqlGatewayServlet extends HttpServlet {
 
     @Override
