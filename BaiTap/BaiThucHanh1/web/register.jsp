@@ -12,12 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="RegisterServlet" method="post">
+        <form action="register" method="post">
             <div>
                 <input type="text" name="username" placeholder="username"> <br>
-                <input type="text" name="password" placeholder="password"> <br>
-                <input type="submit" id="RegisterServlet" value="Register">
+                <input type="password" name="password" placeholder="password"> <br>
+                <input type="submit" id="register" value="Register">
             </div>
         </form>
+        <h5 style="color: red">${announcement}</h5>    
     </body>
 </html>

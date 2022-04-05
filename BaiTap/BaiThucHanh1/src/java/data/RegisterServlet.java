@@ -2,8 +2,12 @@
 package data;
 
 import business.User;
-import static data.LoginServlet.checkUser;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author hoangduongngg
  */
-@WebServlet(name = "RegisterServlet", urlPatterns = {"/RegisterServlet"})
+@WebServlet(urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -32,17 +36,19 @@ public class RegisterServlet extends HttpServlet {
         
         User user = checkUser(username, password, path);
         HttpSession session = request.getSession();
-        String errorLogin = "";
+        String announcement = "";
         
         if (user != null) {
-            url = "register.jsp";
-            errorLogin = "The account already exists.";
+            url = "/register.jsp";
+            announcement = "The account already exists.";
         }
         else {
-            String line = user.getUsername() + "|" + user.getPassword();
-            session.setAttribute("user", user);
+//            String line = user.getUsername() + "|" + user.getPassword();
+            
+            url = "/index.jsp";
+            announcement = "Done";
         }
-        session.setAttribute("errorLogin", errorLogin);
+        request.setAttribute("announcement", announcement);
         
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
@@ -59,5 +65,23 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+    }
+
+    public User checkUser(String username, String password, String path ) throws FileNotFoundException, IOException {
+                //Kiem tra xem da ton tai chua              
+        BufferedReader in = new BufferedReader(new FileReader(new File(path)));
+        String line = in.readLine();
+        while (line != null) {
+            StringTokenizer t = new StringTokenizer(line, "|");
+            String userData = t.nextToken();
+            String passData = t.nextToken();
+            if (username.equals(userData) && password.equals(passData)) {
+                User user = new User(username, password);
+                return user;
+            }
+            line = in.readLine();
+        }
+        in.close();
+        return null;
     }
 }
