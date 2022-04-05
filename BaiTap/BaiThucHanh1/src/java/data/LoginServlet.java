@@ -3,8 +3,12 @@ package data;
 
 import business.User;
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -48,6 +52,8 @@ public class LoginServlet extends HttpServlet {
         
         request.setAttribute("time", getTime());
         request.setAttribute("IPAdress", getIPAdress());
+        request.setAttribute("hits_counter", Hits_counter());
+        
         
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
@@ -83,6 +89,28 @@ public class LoginServlet extends HttpServlet {
     private String getIPAdress() throws UnknownHostException {
         InetAddress myIP=InetAddress.getLocalHost();
         return myIP.getHostAddress();
+    }
+    
+    private String Hits_counter () throws FileNotFoundException, IOException {  
+        String url_file = 
+//                "WEB-INF/hits_counter.txt";
+        "C:\\CODE\\Web Programming\\Web-Progamming-PTIT\\BaiTap\\BaiThucHanh1\\web\\WEB-INF\\hits_counter.txt";
+
+        try {
+            //Bước 1: Tạo đối tượng luồng và liên kết nguồn dữ liệu
+            FileInputStream fis = new FileInputStream(url_file);
+            DataInputStream dis = new DataInputStream(fis);
+            //Bước 2: Đọc dữ liệu
+            int n = dis.readInt(); 
+            fis.close();
+            dis.close();
+            //Hiển thị nội dung đọc từ file
+//            return String.valueOf(n + 1);
+            return "2";
+        } catch (IOException e) {
+             e.printStackTrace();
+           }
+        return "1";
     }
     
     @Override
