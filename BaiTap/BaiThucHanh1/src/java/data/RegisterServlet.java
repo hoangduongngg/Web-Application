@@ -2,19 +2,13 @@
 package data;
 
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import business.User;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -102,21 +96,10 @@ public class RegisterServlet extends HttpServlet {
     }
     
     public void WriteUser (User user) throws FileNotFoundException, IOException {
-        String line = user.getUsername() + "|" + user.getPassword();
-        String url_file = "WEB-INF/login.txt";
-//        try {
-//            FileWriter fw = new FileWriter("WEB-INF/login.txt");
-//            fw.write(line);
-//            fw.close();
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
-
-//        File file = new File("C:\\CODE\\Web Programming\\Web-Progamming-PTIT\\BaiTap\\BaiThucHanh1\\web\\WEB-INF\\login.txt");
-//        OutputStream outputStream = new FileOutputStream(file);
-//        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
-//        outputStreamWriter.write(line + "\n");
-//        outputStreamWriter.flush();
+        String line = user.getUsername() + "|" + user.getPassword() + "\n";
+        String url_file = 
+//                "WEB-INF/login.txt";
+        "C:\\CODE\\Web Programming\\Web-Progamming-PTIT\\BaiTap\\BaiThucHanh1\\web\\WEB-INF\\login.txt";
 
         BufferedWriter bw = null;
         FileWriter fw = null;
@@ -129,7 +112,6 @@ public class RegisterServlet extends HttpServlet {
                 fw = new FileWriter(file.getAbsoluteFile(), true);
                 bw = new BufferedWriter(fw);
                 bw.write(line);
-//                System.out.println("Xong");
          } catch (IOException e) {
                 e.printStackTrace();
          } finally {
@@ -143,4 +125,5 @@ public class RegisterServlet extends HttpServlet {
             }
         }
     }
+    
 }
