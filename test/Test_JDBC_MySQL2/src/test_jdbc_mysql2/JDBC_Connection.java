@@ -30,7 +30,7 @@ public class JDBC_Connection {
 
             String url = "jdbc:mysql://localhost:3306/hello";
             String user = "root";
-            String password = "";
+            String password = "123456789";
             
             return DriverManager.getConnection(url, user, password);
         } 
