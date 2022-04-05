@@ -38,15 +38,14 @@ public class LoginServlet extends HttpServlet {
         
         User user = checkUser(username, password, path);
         HttpSession session = request.getSession();
-        String announcement = "";
         if (user != null) {
             session.setAttribute("user", user);
             url = "/login.jsp";
         }
         else {
-            announcement = "The account does not exist.";
+            request.setAttribute("announcement", "Wrong username or password.");
         }
-        request.setAttribute("announcement", announcement);
+        
         request.setAttribute("time", getTime());
         request.setAttribute("IPAdress", getIPAdress());
         

@@ -1,12 +1,20 @@
 
 package data;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import business.User;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -26,28 +34,36 @@ public class RegisterServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String url = "/login.jsp";
+        String url = "/register.jsp";
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String rePassword = request.getParameter("repassword");
         
         ServletContext sc = getServletContext();
         String path = sc.getRealPath("WEB-INF/login.txt");
         
         User user = checkUser(username, password, path);
         HttpSession session = request.getSession();
-        String announcement = "";
         
-        if (user != null) {
-            url = "/register.jsp";
-            announcement = "The account already exists.";
+        String announcement = "";
+        if (!password.equals(rePassword)) {
+            announcement = "Kiem tra lai mat khau";
         }
         else {
-//            String line = user.getUsername() + "|" + user.getPassword();
-            
-            url = "/index.jsp";
-            announcement = "Done";
+            if (user != null) {
+                url = "/register.jsp";
+                announcement = "The account already exists.";
+            }
+            else {
+                User user_new = new User(username, password);
+                WriteUser(user_new);
+                url = "/index.jsp";
+                announcement = "Dang ky thanh cong.";
+            }
         }
+        
+        
         request.setAttribute("announcement", announcement);
         
         getServletContext().getRequestDispatcher(url).forward(request, response);
@@ -83,5 +99,48 @@ public class RegisterServlet extends HttpServlet {
         }
         in.close();
         return null;
+    }
+    
+    public void WriteUser (User user) throws FileNotFoundException, IOException {
+        String line = user.getUsername() + "|" + user.getPassword();
+        String url_file = "WEB-INF/login.txt";
+//        try {
+//            FileWriter fw = new FileWriter("WEB-INF/login.txt");
+//            fw.write(line);
+//            fw.close();
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
+
+//        File file = new File("C:\\CODE\\Web Programming\\Web-Progamming-PTIT\\BaiTap\\BaiThucHanh1\\web\\WEB-INF\\login.txt");
+//        OutputStream outputStream = new FileOutputStream(file);
+//        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+//        outputStreamWriter.write(line + "\n");
+//        outputStreamWriter.flush();
+
+        BufferedWriter bw = null;
+        FileWriter fw = null;
+        try {
+                File file = new File(url_file);
+                // kiểm tra nếu file chưa có thì tạo file mới
+                if (!file.exists()) {
+                    file.createNewFile();
+                }
+                fw = new FileWriter(file.getAbsoluteFile(), true);
+                bw = new BufferedWriter(fw);
+                bw.write(line);
+//                System.out.println("Xong");
+         } catch (IOException e) {
+                e.printStackTrace();
+         } finally {
+                try {
+                    if (bw != null)
+                            bw.close();
+                    if (fw != null)
+                            fw.close();
+             } catch (IOException ex) {
+                    ex.printStackTrace();
+            }
+        }
     }
 }
