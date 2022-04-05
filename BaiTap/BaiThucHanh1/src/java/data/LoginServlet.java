@@ -7,6 +7,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.StringTokenizer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -34,21 +38,23 @@ public class LoginServlet extends HttpServlet {
         
         User user = checkUser(username, password, path);
         HttpSession session = request.getSession();
-        String errorLogin = "";
+        String announcement = "";
         if (user != null) {
             session.setAttribute("user", user);
             url = "/login.jsp";
         }
         else {
-            errorLogin = "The account does not exist.";
+            announcement = "The account does not exist.";
         }
-        session.setAttribute("errorLogin", errorLogin);
-
+        request.setAttribute("announcement", announcement);
+        request.setAttribute("time", getTime());
+        request.setAttribute("IPAdress", getIPAdress());
         
         getServletContext().getRequestDispatcher(url).forward(request, response);
     }
     
-    public static User checkUser(String username, String password, String path ) throws FileNotFoundException, IOException {
+    public User checkUser(String username, String password, String path ) 
+            throws FileNotFoundException, IOException {
                 //Kiem tra xem da ton tai chua              
         BufferedReader in = new BufferedReader(new FileReader(new File(path)));
         String line = in.readLine();
@@ -60,8 +66,24 @@ public class LoginServlet extends HttpServlet {
                 User user = new User(username, password);
                 return user;
             }
+            line = in.readLine();
         }
+        in.close();
         return null;
+    }
+    
+    private String getTime () {
+    //khai báo một đổi tượng current thuộc class LocalDateTime
+    LocalDateTime current = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    //sử dụng phương thức format() để định dạng ngày giờ hiện tại rồi gán cho chuỗi formatted
+    String formatted = current.format(formatter);
+    return formatted;
+    }
+    
+    private String getIPAdress() throws UnknownHostException {
+        InetAddress myIP=InetAddress.getLocalHost();
+        return myIP.getHostAddress();
     }
     
     @Override

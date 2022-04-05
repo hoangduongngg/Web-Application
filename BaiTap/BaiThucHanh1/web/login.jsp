@@ -13,5 +13,8 @@
     </head>
     <body>
         <h3>${sessionScope.user.getUsername()}</h3>
+        <h3>${time}</h3>
+        <h3>${IPAdress}</h3>
+
     </body>
 </html>
