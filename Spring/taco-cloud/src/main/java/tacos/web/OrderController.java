@@ -23,9 +23,9 @@ public class OrderController {
 	@PostMapping
 	public String processOrder(@Valid Order order, Errors errors) {
 	    //Thuc hien Validate
-//		if (errors.hasErrors()) {
-//		return "orderForm";
-//	    }
+		if (errors.hasErrors()) {
+		return "orderForm";
+	    }
 	    log.info("Order submitted: " + order);
 	    return "redirect:/";
 	}
