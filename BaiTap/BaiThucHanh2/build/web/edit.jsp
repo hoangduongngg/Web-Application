@@ -1,10 +1,10 @@
 <%-- 
     Document   : edit
-    Created on : Apr 2, 2022, 9:41:45 AM
-    Author     : Dung
+    Created on : Apr 26, 2022, 12:20:24 AM
+    Author     : hoangduongngg
 --%>
 
-<%@page import="model.Product"%>
+<%@page import="business.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

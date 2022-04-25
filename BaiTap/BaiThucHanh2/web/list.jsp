@@ -1,12 +1,12 @@
 <%-- 
     Document   : list
-    Created on : Apr 16, 2022, 9:56:20 AM
-    Author     : Hieu
+    Created on : Apr 26, 2022, 12:12:54 AM
+    Author     : hoangduongngg
 --%>
 
 <%@page import="java.util.List"%>
-<%@page import="model.Product"%>
-<%@page import="model.Product"%>
+<%@page import="business.Product"%>
+<%@page import="business.Product"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
