@@ -18,16 +18,16 @@ import business.Product;
  * @author hoangduongngg
  */
 public class ProductIO {
-
+    private String tableName = "product";
     public static Connection connection = 
             DBConnection.getConnection(
                     "localhost", 
                     "product_maintenance", //name_database
-                    "root",         //user
-                    "123456789");  //password
+                    "root",                 //username
+                    "123456789");           //password
     public List<Product>getAll(){
         List<Product>list = new ArrayList<>();
-        String sql = "select * from product";
+        String sql = "select * from " + tableName;
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet re = ps.executeQuery();
@@ -44,7 +44,7 @@ public class ProductIO {
         return list;
     }
     public void delete(String code){
-        String sql = "delete from product where code = ?";
+        String sql = "delete from "+tableName+" where code = ?";
         try{
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setNString(1, code);
@@ -54,7 +54,7 @@ public class ProductIO {
         }
     }
     public void insert(Product p){
-        String sql = "insert into product values(?,?,?)";
+        String sql = "insert into "+tableName+" values(?,?,?)";
         try{
             PreparedStatement st = connection.prepareStatement(sql);
             st.setNString(1, p.getCode());
@@ -78,7 +78,7 @@ public class ProductIO {
         }
     }
     public Product getProductByCode(String code){
-        String sql = "select * from product where code=?";
+        String sql = "select * from "+tableName+" where code=?";
         try {
             PreparedStatement rs = connection.prepareStatement(sql);
             rs.setNString(1, code);
