@@ -39,7 +39,7 @@
             <tr>
                 <td><%= x.getCode()%></td>
                 <td><%= x.getDescription()%></td>
-                <td><%= x.getPrice()%></td>
+                <td>$<%= x.getPrice()%></td>
                 <td>
                     <a href="edit?code=<%= x.getCode()%>">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;
                     <a href="delete?code=<%= x.getCode()%>">Delete</a>
