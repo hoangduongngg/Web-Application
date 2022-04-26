@@ -18,14 +18,14 @@ import business.Product;
  * @author hoangduongngg
  */
 public class ProductIO {
-    private String tableName = "product";
+    private String tableName = "product";   //name of table in MySQL 
     
     public static Connection connection = 
             DBConnection.getConnection(
                     "localhost", 
-                    "product_maintenance", //name_database
-                    "root",                 //username
-                    "123456789");           //password
+                    "product_maintenance", //name Schema in MySQL
+                    "root",                 //username MySQL
+                    "123456789");           //password MySQL
     
     public List<Product>getAll(){
         List<Product>list = new ArrayList<>();
