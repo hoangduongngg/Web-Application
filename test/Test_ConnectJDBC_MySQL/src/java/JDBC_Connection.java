@@ -30,15 +30,15 @@ public class JDBC_Connection {
         return null;
     }
     
-    public static void main(String[] args) {
-        Connection connection = getJDBCConnection();
-        if (connection != null) {
-            System.out.println("Right");
-        }
-        else {
-            System.out.println("no");
-        }
-        
-        
-    }
+//    public static void main(String[] args) {
+//        Connection connection = getJDBCConnection();
+//        if (connection != null) {
+//            System.out.println("Right");
+//        }
+//        else {
+//            System.out.println("no");
+//        }
+//        
+//        
+//    }
 }
