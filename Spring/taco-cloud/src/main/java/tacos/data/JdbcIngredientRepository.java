@@ -34,15 +34,15 @@ public class JdbcIngredientRepository implements IngredientRepository {
         rs.getString("name"),
         Ingredient.Type.valueOf(rs.getString("type")));
   }
-@Override
-public Ingredient save(Ingredient ingredient) {
-	jdbc.update(
-			"insert into Ingredient(id, name, type) values(?, ?, ?)",
-			ingredient.getId(),
-			ingredient.getName(),
-			ingredient.getType().toString()
-			);
-	return ingredient;
-} 
+	@Override
+	public Ingredient save(Ingredient ingredient) {
+		jdbc.update(
+				"insert into Ingredient(id, name, type) values(?, ?, ?)",
+				ingredient.getId(),
+				ingredient.getName(),
+				ingredient.getType().toString()
+				);
+		return ingredient;
+	} 
 
 }
