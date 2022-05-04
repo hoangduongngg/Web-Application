@@ -4366,3 +4366,81 @@ Binding(CTRL+SHIFT+C,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:34:44.998
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XOtcAZqV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:34:44.998
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.XOtcAZqV
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:34:44.998
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:34:44.999
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.XOtcAZqV => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:12.720
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:12.721
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@69fd6397[org.springframework.tooling.boot.ls:1.32.0.202203131529(id=569)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:12.721
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.700
+!MESSAGE Boot LS startup time from start to initialized: 1978ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.802
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.cVuTyNOsisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.802
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.804
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.804
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.805
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.805
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.cVuTyNOs => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.809
+!MESSAGE classpath=83 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.813
+!MESSAGE buffering callback sts4.classpath.cVuTyNOs taco-cloud false 83
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.814
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.815
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.816
+!MESSAGE buffering callback sts4.classpath.cVuTyNOs Tacos false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:14.816
+!MESSAGE executing callback sts4.classpath.cVuTyNOs 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:37:15.111
+!MESSAGE executing callback sts4.classpath.cVuTyNOs SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:41:56.125
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cVuTyNOs
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:41:56.125
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.cVuTyNOs
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:41:56.126
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-05-04 07:41:56.126
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.cVuTyNOs => OK
+
+!ENTRY org.eclipse.ui 2 2 2022-05-04 07:42:01.230
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
