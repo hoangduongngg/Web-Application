@@ -11,7 +11,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     </head>
     <body>
         <h1>Login </h1>
-        <form>
+        <form method="post" action="login">
             <div>
                 <label>Username: </label>
                 <input type="text" name="username">

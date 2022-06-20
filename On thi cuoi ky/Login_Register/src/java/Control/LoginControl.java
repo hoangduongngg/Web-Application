@@ -11,6 +11,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 /**
  *
@@ -35,9 +37,15 @@ public class LoginControl extends HttpServlet {
         String user = request.getParameter("username");
         String pass = request.getParameter("password");
         
-        request.setAttribute(user, "user");
-        request.setAttribute(pass, "pass");
+//        request.setAttribute("user", user);
+//        request.setAttribute("pass", pass);
         
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+        session.setAttribute("pass", pass);
+        
+        String user_ss = (String) session.getAttribute("user");
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
