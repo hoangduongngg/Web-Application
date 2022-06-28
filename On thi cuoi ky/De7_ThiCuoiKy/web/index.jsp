@@ -27,6 +27,7 @@
                 <option value="3">3</option>
             </select>
             <br>
+            <h5 style="color: red">${sessionScope.mess}</h5>
             <input type="submit" value="Add">
             <input type="button" value="Reset">
         </form>

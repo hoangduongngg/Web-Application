@@ -32,13 +32,33 @@ public class AddControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        session.setAttribute("id", request.getParameter("id"));
-        session.setAttribute("name", request.getParameter("name"));
-        session.setAttribute("dob", request.getParameter("dob"));
-        session.setAttribute("department", request.getParameter("department"));
+       HttpSession session = request.getSession();
+
+        String id = request.getParameter("id");
+        String name = request.getParameter("name");
+        String dob = request.getParameter("dob");
+        String department = request.getParameter("department");
         
-        request.getRequestDispatcher("confirm.jsp").forward(request, response);
+        if (id.equals("") ||
+            name.equals("") ||
+            dob.equals("") ||
+            department.equals("")
+            ) {
+            session.setAttribute("mess", "Khong duoc de trong du lieu");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+        else {
+            session.setAttribute("id", id);
+            session.setAttribute("name", name);
+            session.setAttribute("dob", dob);
+            session.setAttribute("department", department);
+
+            request.getRequestDispatcher("confirm.jsp").forward(request, response);
+        }
+        
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
